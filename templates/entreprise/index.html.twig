@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EntrepriseController!{% endblock %}
+{% block title %}Entreprises
+{% endblock %}
 
 {% block body %}
-    <h1>Liste des Entreprises</h1>
-    {% for entreprise in entreprises %}
-       {# {{ entreprise.raisonSociale ~ '(' ~ entreprise.cp ~ ')' }} <br> #}
-       {{ entreprise }}<br>
-    {% endfor %}
-
+	<h1>Liste des Entreprises</h1>
+	<a href="{{ path('add_entreprise') }}">Ajouter une Entreprise</a><br>
+	{% for entreprise in entreprises %}
+		<a href="{{ path('show_entreprise', {'id': entreprise.id}) }}">{{ entreprise }}</a><br>
+	{% endfor %}
 
 {% endblock %}

@@ -8,10 +8,19 @@
 	<h1>{{ entreprise }}</h1>
 	<p>
 		SIRET :
-		<br>
+		{{ entreprise.siret}}<br>
 		Date de Création :
-		{{ entreprise.dateCreation | date('d,m,Y') }}
+		{{ entreprise.dateCreation | date('d,m,Y') }}<br>
 		Adresse :
-		{{ entreprise.fullAdresse }}
+		{{ entreprise.fullAdresse }}<br>
 	</p>
-{% endblock %}
+
+	<h2>Liste des Employés<h2>
+			{% if entreprise.employes | length == 0 %}
+				<p>Pas d'employés dans cette entreprise</p>
+			{% else %}
+				{% for employe in entreprise.employes %}
+					<a href="{{ path('show_employe', {'id':employe.id}) }}">{{ employe }}</a><br>
+				{% endfor %}
+			{% endif %}
+		{% endblock %}

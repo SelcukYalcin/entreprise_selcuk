@@ -128,12 +128,12 @@ class Employe
     public function getAge(): ?string
     {
         $now = new \Datetime();
-        $interval = date_diff($this->dateNaissance , $now);
+        $interval = date_diff($this->dateNaissance, $now);
         return $interval->format('%Y');
     }
 
     public function __toString()
     {
-        return $this->prenom. " " .$this->nom;
+        return $this->prenom . " " . $this->nom . " " . $this->getEntreprise() . " ";
     }
 }
