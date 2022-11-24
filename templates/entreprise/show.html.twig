@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'une Entreprise
+{% endblock %}
+
+{% block body %}
+
+	<h1>{{ entreprise }}</h1>
+	<p>
+		SIRET :
+		<br>
+		Date de Création :
+		{{ entreprise.dateCreation | date('d,m,Y') }}
+		Adresse :
+		{{ entreprise.fullAdresse }}
+	</p>
+{% endblock %}

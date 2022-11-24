@@ -119,6 +119,12 @@ class Entreprise
         return $this;
     }
 
+    public function getFullAdresse(): ?string
+    {
+        return $this->adresse. " " .$this->cp. " " .$this->ville;
+    }
+
+
     /**
      * @return Collection<int, Employe>
      */
