@@ -22,7 +22,7 @@ class EmployeType extends AbstractType
             ->add('dateNaissance', DateType::class, ['widget' => 'single_text'])
             ->add('dateEmbauche', DateType::class, ['widget' => 'single_text'])
             ->add('ville', TextType::class)
-            ->add('entreprise', EntityType::class, ['class' => Entreprise::class])
+            ->add('entreprise', EntityType::class, ['class' => Entreprise::class, 'choice_label' => 'raisonSociale'])
             ->add('submit', SubmitType::class);
     }
 

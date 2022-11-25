@@ -8,6 +8,8 @@
 	<a href="{{ path('add_entreprise') }}">Ajouter une Entreprise</a><br>
 	{% for entreprise in entreprises %}
 		<a href="{{ path('show_entreprise', {'id': entreprise.id}) }}">{{ entreprise }}</a><br>
+		<a href="{{ path('edit_entreprise', {'id': entreprise.id}) }}">Editer</a><br>
+
 	{% endfor %}
 
 {% endblock %}
