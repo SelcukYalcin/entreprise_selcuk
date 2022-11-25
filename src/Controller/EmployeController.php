@@ -55,7 +55,9 @@ class EmployeController extends AbstractController
 
         // Vue pour afficher le formulaire d'ajout
         return $this->render('employe/add.html.twig', [
-            'formAddEmploye' => $form->createView()
+            'formAddEmploye' => $form->createView(),
+            'edit' => $employe->getId()
+
         ]);
     }
 
@@ -77,7 +79,8 @@ class EmployeController extends AbstractController
     public function show(Employe $employe): Response
     {
         return $this->render('employe/show.html.twig', [
-            'employe' => $employe
+            'employe' => $employe,
+
 
         ]);
     }

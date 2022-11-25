@@ -4,8 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ajouter une Entreprise</h1>
-    
+    {% if edit %}
+		<h1>Editer une Entreprise</h1>
+	{% else %}
+		<h1>Ajouter une Entreprise</h1>
+    {% endif %}
 		{{ form(formAddEntreprise) }}
 	
 {% endblock %}
