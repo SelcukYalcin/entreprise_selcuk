@@ -23,7 +23,11 @@ CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Les données exportées n'étaient pas sélectionnées.
+-- Listage des données de la table entreprise.doctrine_migration_versions : ~1 rows (environ)
+/*!40000 ALTER TABLE `doctrine_migration_versions` DISABLE KEYS */;
+INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
+	('DoctrineMigrations\\Version20221123102322', '2022-11-23 10:29:32', 154);
+/*!40000 ALTER TABLE `doctrine_migration_versions` ENABLE KEYS */;
 
 -- Listage de la structure de la table entreprise. employe
 CREATE TABLE IF NOT EXISTS `employe` (
@@ -39,7 +43,12 @@ CREATE TABLE IF NOT EXISTS `employe` (
   CONSTRAINT `FK_F804D3B9A4AEAFEA` FOREIGN KEY (`entreprise_id`) REFERENCES `entreprise` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Les données exportées n'étaient pas sélectionnées.
+-- Listage des données de la table entreprise.employe : ~2 rows (environ)
+/*!40000 ALTER TABLE `employe` DISABLE KEYS */;
+INSERT INTO `employe` (`id`, `entreprise_id`, `nom`, `prenom`, `date_naissance`, `date_embauche`, `ville`) VALUES
+	(1, 1, 'Mouse', 'Mickey', '1957-08-07 11:40:30', '2022-11-23 00:00:00', 'New York'),
+	(2, 2, 'Donald', 'Duck', '1954-11-23 11:42:16', '2022-11-23 00:00:00', 'Washington');
+/*!40000 ALTER TABLE `employe` ENABLE KEYS */;
 
 -- Listage de la structure de la table entreprise. entreprise
 CREATE TABLE IF NOT EXISTS `entreprise` (
@@ -51,9 +60,14 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `ville` varchar(50) NOT NULL,
   `siret` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Les données exportées n'étaient pas sélectionnées.
+-- Listage des données de la table entreprise.entreprise : ~2 rows (environ)
+/*!40000 ALTER TABLE `entreprise` DISABLE KEYS */;
+INSERT INTO `entreprise` (`id`, `raison_sociale`, `date_creation`, `adresse`, `cp`, `ville`, `siret`) VALUES
+	(1, 'ELAN FORMATION', '2022-11-23 11:30:25', ' 14 rue du rhone', '67100', 'Strasbourg', '123456789'),
+	(2, 'Walt Disney', '2022-11-23 11:38:50', 'Milkyway', '99000', 'Hollywood', '234567891');
+/*!40000 ALTER TABLE `entreprise` ENABLE KEYS */;
 
 -- Listage de la structure de la table entreprise. messenger_messages
 CREATE TABLE IF NOT EXISTS `messenger_messages` (
@@ -70,7 +84,9 @@ CREATE TABLE IF NOT EXISTS `messenger_messages` (
   KEY `IDX_75EA56E016BA31DB` (`delivered_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Les données exportées n'étaient pas sélectionnées.
+-- Listage des données de la table entreprise.messenger_messages : ~0 rows (environ)
+/*!40000 ALTER TABLE `messenger_messages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `messenger_messages` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
