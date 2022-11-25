@@ -11,6 +11,8 @@
 	{% for employe in employes %}
 		<a href="{{ path('show_employe', {'id': employe.id}) }}">{{ employe }}</a><br>
 		<a href="{{ path('edit_employe', {'id': employe.id}) }}">Editer</a><br>
+		<a href="{{ path('delete_employe', {'id': employe.id}) }}">Delete</a><br>
+
 	{% endfor %}
 
 {% endblock %}
